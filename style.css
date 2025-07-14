@@ -12,6 +12,16 @@ body {
     align-items: center;
 }
 
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 1102px;
+    left: 1;
+}
+
 .testimonial-content {
     position: absolute;
     width: 695px;
@@ -30,16 +40,6 @@ body {
     line-height: 60px;
     letter-spacing: 0px;
     color: #183B56;
-}
-
-.testimonial {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 1102px;
-    left: 1;
 }
 
 .testimonial-img-base-right {
