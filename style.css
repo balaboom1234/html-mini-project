@@ -1,4 +1,3 @@
-/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
@@ -236,6 +235,7 @@ body {
     width: 100vw;
     height: 1102px;
     left: 1;
+    position: relative;
 }
 
 .testimonial-img-base-right {
@@ -436,6 +436,50 @@ body {
     left: 1.5px;
     angle: -180 deg;
     opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .subscription-section-content {
+        width: 355px;
+        height: 304px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .subscription-title {
+        width: 327px;
+        height: 80px;
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    .subscription-form {
+        width: 327px;
+        height: 80px;
+    }
+
+    .subscription-input {
+        width: 200px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+
+    .subscription-button {
+        width: 126px;
+        height: 48px;
+        top: 202.15px;
+        left: 209px;
+        font-weight: 700;
+        font-size: 12.19px;
+        line-height: 100%;
+        text-align: center;
+    }
 }
 
 .footer-content {
