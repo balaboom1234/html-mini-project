@@ -193,6 +193,191 @@ body {
     height: 100px;
     border-radius: 20px;
     background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-content {
+    position: absolute;
+    width: 695px;
+    height: 240px;
+    top: 386.28px;
+    left: 611.78px;
+    opacity: 1;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Circular Std;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: 0px;
+    color: #183B56;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 1102px;
+    left: 1;
+}
+
+.testimonial-img-base-right {
+    position: absolute;
+    width: 627.2792358398438;
+    height: 907.6213989257812;
+    top: 103.47px;
+    left: 1042px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 1.54px;
+}   
+
+.testimonial-img-base-left {
+    position: absolute;
+    width: 627.2789916992188;
+    height: 907.6213989257812;
+    top: 103.47px;
+    left: 249.28px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 1.54px;
+}
+
+.testimonial-content-name {
+    width: 189;
+    height: 72;
+    top: 656.28px;
+    left: 864.78px;
+    opacity: 1;
+    color: #0BC0EB;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.testimonial-content-name span {
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 36px;
+    color: #8E9099;
+}
+
+.testimonial-img-oval-1 {
+    position: absolute;
+    width: 106px;
+    height: 106px;
+    top: 303.98px;
+    left: 249.28px;
+    opacity: 1;
+    border-width: 2px;
+    }
+
+.testimonial-img-oval-2 {
+    position: absolute;
+    width: 106px;
+    height: 106px;
+    top: 466.29px;
+    left: 386.86px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 2px;
+} 
+
+.testimonial-img-oval-3 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 672.37px;
+    left: 340.14px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 1.68px;    
+}
+
+.testimonial-img-oval-4 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 313.48px;
+    left: 1465.85px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 1.68px;
+}
+
+.testimonial-img-oval-5 {
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    top: 654.28px;
+    left: 1390.02px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 1px;
+}
+
+.testimonial-img-oval-6 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 530.29px;
+    left: 1604.41px;
+    angle: 0 deg;
+    opacity: 1;
+    border-width: 2px;
+}
+
+.subscription-section {
+    width: 100vw;
+    max-width: 1920px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.subscription-section-content {
+    width: 1420px;
+    height: 459.44px;
+    top: 0.09px;
+    left: 250px;
+    opacity: 1;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    background-color: #0BC0EB;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.subscription-title {
+    display: flex;
+    width: 541.07px;
+    height: 129.44px;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 60px;
+    color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscription-form {
+    display: flex;
+    width: 574px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
     justify-content: center;
     align-items: center;
     gap: 10px;
