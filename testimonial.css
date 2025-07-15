@@ -37,15 +37,15 @@
 }
 
 .testimonial-content-name {
-    width: 189px;
-    height: 72px;
-    top: 656.28px;
-    left: 864.78px;
-    opacity: 1;
-    color: #0BC0EB;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 36px;
+  white-space: nowrap;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  text-align: left;
+  color: #0BC0EB;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 36px;
 }
 
 .testimonial-content-name span {
