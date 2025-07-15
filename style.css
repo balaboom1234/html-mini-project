@@ -1298,5 +1298,29 @@ p{
     line-height: 36px;
 }
 
+/* นิ้ง */
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+    #about .container {
+      flex-direction: column;
+    }
+  
+    .card {
+      flex: 1 1 100%;
+    }
+  
+    .make-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .make-right h2 {
+      font-size: 1.3rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
 
   
