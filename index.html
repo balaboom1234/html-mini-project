@@ -255,5 +255,147 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Scroll-triggered animation for testimonial section
+        function handleScrollAnimation() {
+            const testimonialSection = document.querySelector('.testimonial');
+            
+            if (!testimonialSection) return;
+
+            // Reset animation state
+            testimonialSection.classList.remove('animate-on-scroll');
+            
+            // Add scroll event listener for smooth animation triggering
+            let hasAnimated = false;
+            
+            function checkScroll() {
+                const rect = testimonialSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Trigger animation when section is 50% visible
+                if (rect.top < windowHeight * 0.5 && !hasAnimated) {
+                    hasAnimated = true;
+                    testimonialSection.classList.add('animate-on-scroll');
+                    console.log('Animation triggered by scroll!');
+                }
+                
+                // Reset animation when section is out of view
+                if (rect.bottom < 0 || rect.top > windowHeight) {
+                    hasAnimated = false;
+                    testimonialSection.classList.remove('animate-on-scroll');
+                }
+            }
+
+            // Initial check
+            checkScroll();
+            
+            // Add scroll event listener with throttling
+            let ticking = false;
+            function updateOnScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        checkScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', updateOnScroll, { passive: true });
+            
+            // Also use Intersection Observer as backup
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        entry.target.classList.add('animate-on-scroll');
+                        console.log('Animation triggered by observer!');
+                    } else if (!entry.isIntersecting) {
+                        hasAnimated = false;
+                        entry.target.classList.remove('animate-on-scroll');
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            observer.observe(testimonialSection);
+        }
+
+        // Add hover effects for decorative images
+        function addHoverEffects() {
+            const ovalImages = document.querySelectorAll('.testimonial-img-oval-1, .testimonial-img-oval-2, .testimonial-img-oval-3, .testimonial-img-oval-4, .testimonial-img-oval-5, .testimonial-img-oval-6');
+            
+            ovalImages.forEach(img => {
+                // Remove existing event listeners
+                img.removeEventListener('mouseenter', handleMouseEnter);
+                img.removeEventListener('mouseleave', handleMouseLeave);
+                
+                // Add new event listeners
+                img.addEventListener('mouseenter', handleMouseEnter);
+                img.addEventListener('mouseleave', handleMouseLeave);
+            });
+        }
+
+        function handleMouseEnter() {
+            this.style.transform = 'scale(1.15) rotate(8deg)';
+            this.style.filter = 'brightness(1.2) drop-shadow(0 4px 8px rgba(0,0,0,0.2))';
+        }
+
+        function handleMouseLeave() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+            this.style.filter = 'brightness(1) drop-shadow(0 0 0 rgba(0,0,0,0))';
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonialSection = document.querySelector('.testimonial');
+            
+            // Add loading class initially
+            if (testimonialSection) {
+                testimonialSection.classList.add('loading');
+                
+                // Remove loading class after images are loaded
+                const images = testimonialSection.querySelectorAll('img');
+                let loadedImages = 0;
+                
+                images.forEach(img => {
+                    if (img.complete) {
+                        loadedImages++;
+                    } else {
+                        img.addEventListener('load', () => {
+                            loadedImages++;
+                            if (loadedImages === images.length) {
+                                testimonialSection.classList.remove('loading');
+                            }
+                        });
+                    }
+                });
+                
+                // Fallback: remove loading class after 3 seconds
+                setTimeout(() => {
+                    testimonialSection.classList.remove('loading');
+                }, 3000);
+            }
+            
+            // Delay initialization to ensure DOM is ready
+            setTimeout(() => {
+                handleScrollAnimation();
+                addHoverEffects();
+            }, 100);
+        });
+
+        // Re-initialize on window resize for responsive behavior
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                handleScrollAnimation();
+                addHoverEffects();
+            }, 250);
+        });
+    </script>
 </body>
 </html> 
